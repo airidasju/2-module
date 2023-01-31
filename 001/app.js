@@ -37,10 +37,10 @@ const arr1divided = () => {
 }
 // console.log("arr1 split into two, based on its indexes", arrEven, arrOdd)
 
-//TASK 2e
-const arr1equal0 = arr1.map((num, index) => (index % 2 === 0 ? num = 0 : num = num))
-// console.log("10 more elements added to array)", arr1equal0)
+//TASK 2g
+const arr1equal0 = arr1.map((num, index) => (index % 2 === 0 && num > 15 ? num = 0 : num = num))
+// console.log("All numbers that have a prime index and is more than 15)", arr1equal0)
 
-//TASK 2f
+//TASK 2h
 const arr1under10 = arr1.findIndex((num => num < 10))
 // console.log("Index of first number thats less than 10)", arr1under10)
