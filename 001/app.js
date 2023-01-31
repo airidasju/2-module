@@ -21,6 +21,26 @@ const sumOfEven = arr1.reduce((acc, curr) => acc + (curr % 2 === 0 ? curr : 0))
 // console.log("Sum of every even array element: ", sumOfEven)
 
 //TASK 2d
-const arr1Changed = arr1.map((curr, index) => curr - index)
-// console.log("Every element from arr1 minus its index (arr[1] - 1)", arr1Changed)
+const arr1minusIndex = arr1.map((curr, index) => curr - index)
+// console.log("Every element from arr1 minus its index (arr[1] - 1)", arr1minusIndex)
 
+//TASK 2e
+const arr1plus10 = [...arr1, ...Array(10)].map(_ => Math.floor(Math.random() * (25 - 5) + 5))
+// console.log("10 more elements added to array)", arr1plus10)
+
+//TASK 2f
+const arr1divided = () => {
+    arrEven = []
+    arrOdd = []
+    arr1.forEach((num, index) => (index % 2 === 0 ? arrEven.push(num) : arrOdd.push(num)))
+    return arrOdd, arrEven
+}
+// console.log("arr1 split into two, based on its indexes", arrEven, arrOdd)
+
+//TASK 2e
+const arr1equal0 = arr1.map((num, index) => (index % 2 === 0 ? num = 0 : num = num))
+// console.log("10 more elements added to array)", arr1equal0)
+
+//TASK 2f
+const arr1under10 = arr1.findIndex((num => num < 10))
+console.log("10 more elements added to array)", arr1under10)
