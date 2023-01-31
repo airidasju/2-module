@@ -43,4 +43,4 @@ const arr1equal0 = arr1.map((num, index) => (index % 2 === 0 ? num = 0 : num = n
 
 //TASK 2f
 const arr1under10 = arr1.findIndex((num => num < 10))
-console.log("10 more elements added to array)", arr1under10)
+// console.log("Index of first number thats less than 10)", arr1under10)
