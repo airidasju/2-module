@@ -54,5 +54,12 @@ const arr200 = [...Array(200)].map(_ => ["A","B","C","D"][Math.floor(Math.random
 
 
 //TASK 4
+const task4 = () => {
+  const random200Array = () => [...Array(200)].map(_ => ["A","B","C","D"][Math.floor(Math.random() * 4)])
+  const random3array = [firstRandom = random200Array(), secondRandom = random200Array(), thirdRandom = random200Array()].forEach((array, arrayIndex) =>
+                                                                                                                        array.map((letter) => `${array[array]}`))
+  console.log(random3array)
+}
 
+task4()
 
