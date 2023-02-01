@@ -1,9 +1,10 @@
-
 //TASK 1
 
 const arr1 = [...Array(30)].map(_ => Math.floor(Math.random() * (25 - 5) + 5))
 console.log(arr1)
 // console.log("TASK 1: generate 30 random numbers(5-25) to an array  ",arr1)
+
+
 
 //TASK 2a
 const aboveTen = arr1.reduce(
@@ -35,6 +36,7 @@ const arr1divided = () => {
     arr1.forEach((num, index) => (index % 2 === 0 ? arrEven.push(num) : arrOdd.push(num)))
     return arrOdd, arrEven
 }
+// arr1divided()
 // console.log("arr1 split into two, based on its indexes", arrEven, arrOdd)
 
 //TASK 2g
@@ -43,4 +45,14 @@ const arr1equal0 = arr1.map((num, index) => (index % 2 === 0 && num > 15 ? num =
 
 //TASK 2h
 const arr1under10 = arr1.findIndex((num => num < 10))
-// console.log("Index of first number thats less than 10)", arr1under10)
+// console.log("Index of first number thats less than 10", arr1under10)
+
+
+//TASK 3
+const arr200 = [...Array(200)].map(_ => ["A","B","C","D"][Math.floor(Math.random() * 4)]).reduce((count, item) => (count[item] = count[item] + 1 || 1, count), {});
+// console.log("We create a new array of 200 elements(randomized A,B,C,D) then count how many of each letter got generated", arr200)
+
+
+//TASK 4
+
+
