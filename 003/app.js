@@ -128,7 +128,7 @@ man5[prop] = 'Kisas'
 
 console.log(man, man2, man3, man4, man5);
 
-console.clear();
+// console.clear();
 
 const house = [man, man2, man3, man4, man5];
 
