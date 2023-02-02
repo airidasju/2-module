@@ -79,13 +79,15 @@ const task4 = () => {
     ),
   );
   const findDuplicates = tripletArr.filter((el, index) =>
-    tripletArr.indexOf(el) == index
+    tripletArr.indexOf(el) === index
       ? repeatingCombination++
       : uniqueCombination++,
   );
-  console.log(tripletArr)
-  console.log(`There is ${uniqueCombination} unique combinations and ${repeatingCombination} repeating combinations`)
-  return uniqueCombination, repeatingCombination
+  console.log(tripletArr);
+  console.log(
+    `There is ${uniqueCombination} unique combinations and ${repeatingCombination} repeating combinations`,
+  );
+  return uniqueCombination, repeatingCombination;
 };
 
 task4();
