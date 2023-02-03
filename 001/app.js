@@ -3,7 +3,7 @@
 const arr1 = [...Array(30)].map((_) =>
   Math.floor(Math.random() * (25 - 5) + 5),
 );
-console.log(arr1);
+// console.log(arr1);
 // console.log("TASK 1: generate 30 random numbers(5-25) to an array  ",arr1)
 
 //TASK 2a
@@ -80,8 +80,8 @@ const task4 = () => {
   );
   const findDuplicates = tripletArr.filter((el, index) =>
     tripletArr.indexOf(el) === index
-      ? repeatingCombination++
-      : uniqueCombination++,
+      ? uniqueCombination++
+      : repeatingCombination++,
   );
   console.log(tripletArr);
   console.log(
@@ -89,5 +89,19 @@ const task4 = () => {
   );
   return uniqueCombination, repeatingCombination;
 };
+// task4();
 
-task4();
+
+//TASK 5
+
+const task5 = () => {
+  const random100Array = () => [...Array(100)].map((_, array) => parseInt(Math.random() * (999 - 100) + 100))
+  const arr1Random = random100Array()
+  const arr2Random = random100Array()
+  const findDupe = (arr) => arr.map((el,index) => arr.indexOf(el) === index ? el : "asd");
+  const arr1Filtered = findDupe(arr1Random);
+  const arr2Filtered = findDupe(arr2Random);
+  console.log(arr1Filtered, arr2Filtered);
+};
+
+console.log(task5())
