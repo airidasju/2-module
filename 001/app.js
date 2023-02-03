@@ -95,13 +95,18 @@ const task4 = () => {
 //TASK 5
 
 const task5 = () => {
-  const random100Array = () => [...Array(100)].map((_, array) => parseInt(Math.random() * (999 - 100) + 100))
-  const arr1Random = random100Array()
-  const arr2Random = random100Array()
-  const findDupe = (arr) => arr.map((el,index) => arr.indexOf(el) === index ? el : "asd");
-  const arr1Filtered = findDupe(arr1Random);
-  const arr2Filtered = findDupe(arr2Random);
-  console.log(arr1Filtered, arr2Filtered);
+  arr1Random = []
+  arr2Random = []
+  const generateNewNum = () => parseInt(Math.random() * (1000 - 100) + 100)
+  function createNewRandom(arr) {
+    while (arr.length < 100) {
+      const newNum = generateNewNum()
+      if(arr.indexOf(newNum == -1))
+        arr.push(newNum)
+    }
+  }
+  createNewRandom(arr1Random)
+  createNewRandom(arr2Random)
 };
-
-console.log(task5())
+// Generates 2 arrays of 100 elements from 100 to 999. All elements are unique
+// task5()
