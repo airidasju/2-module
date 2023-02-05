@@ -109,4 +109,10 @@ const task5 = () => {
   createNewRandom(arr2Random)
 };
 // Generates 2 arrays of 100 elements from 100 to 999. All elements are unique
-// task5()
+task5()
+
+
+//TASK 6
+const arr6 = arr1Random.filter((el) => !arr2Random.includes(el))
+// console.log("An array of values from arrRandom1 which do not include arr2Random values", arr6)
+
