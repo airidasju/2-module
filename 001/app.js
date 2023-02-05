@@ -119,3 +119,19 @@ const arr6 = arr1Random.filter((el) => !arr2Random.includes(el))
 //TASK 7
 const arr7 = arr1Random.filter((el) => arr2Random.includes(el))
 // console.log("An array of values from that exist in arrRandom1 and arrRandom2", arr7)
+
+
+//TASK 8
+const task8 = () => {
+  const arr8 = []
+  const indexes = arr1Random.map((el) => el)
+  const values = arr2Random.map((el) => el)
+  for (let i = 0; i < indexes.length; i++) {
+    arr8[indexes[i]] = values[i];
+  }
+  return arr8
+}
+task8()
+// Creates an arr8 array which indexes are the values from arr1Random and values are the values from arr2Random
+
+
