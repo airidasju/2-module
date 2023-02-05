@@ -135,3 +135,35 @@ task8()
 // Creates an arr8 array which indexes are the values from arr1Random and values are the values from arr2Random
 
 
+//TASK 9
+const task9 = () => {
+  const arr9 = [];
+  for(let i=0; i< 10; i++) {
+    if(i < 2) {
+      arr9.push(Math.floor(Math.random() * (25 - 5) + 5))
+    } else {
+      arr9[i] = arr9[i-1] + arr9[i-2]
+    }
+  }
+  return arr9
+}
+task9()
+
+const arr11 = [...Array(10)].reduce((acc, el, index) => {
+  if (index < 2) {
+    acc.push(Math.floor(Math.random() * (25 - 5) + 5));
+  } else {
+    acc.push(acc[index - 1] + acc[index - 2]);
+  }
+  return acc;
+}, []);
+// console.log(arr11)
+// Works aswell
+
+
+
+// const arr10 = [...Array(10)].map((el, index) => index < 2 ? el = Math.floor(Math.random() * (25 - 5) + 5) : el = arr10[(index - 1)] + arr10[(index-2)])
+//This code is not functional since el = arr10[(index - 1)] + arr10[(index-2)] is not valid
+
+
+
