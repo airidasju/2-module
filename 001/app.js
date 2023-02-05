@@ -116,3 +116,6 @@ task5()
 const arr6 = arr1Random.filter((el) => !arr2Random.includes(el))
 // console.log("An array of values from arrRandom1 which do not include arr2Random values", arr6)
 
+//TASK 7
+const arr7 = arr1Random.filter((el) => arr2Random.includes(el))
+// console.log("An array of values from that exist in arrRandom1 and arrRandom2", arr7)
