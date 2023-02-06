@@ -164,6 +164,3 @@ const arr11 = [...Array(10)].reduce((acc, el, index) => {
 
 // const arr10 = [...Array(10)].map((el, index) => index < 2 ? el = Math.floor(Math.random() * (25 - 5) + 5) : el = arr10[(index - 1)] + arr10[(index-2)])
 //This code is not functional since el = arr10[(index - 1)] + arr10[(index-2)] is not valid
-
-
-
