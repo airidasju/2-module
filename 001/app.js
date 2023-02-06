@@ -1,169 +1,53 @@
-//TASK 1
+console.log('Hello, hello');
 
-const arr1 = [...Array(30)].map((_) =>
-  Math.floor(Math.random() * (25 - 5) + 5),
-);
+//1
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+
+const arr1 = [];
+for (let i = 0; i < 10; i++) {
+    const rand = getRandomIntInclusive(1, 10);
+    arr1.push(rand);
+}
 // console.log(arr1);
-// console.log("TASK 1: generate 30 random numbers(5-25) to an array  ",arr1)
 
-//TASK 2a
-const aboveTen = arr1.reduce(
-  (accumulator, n) => accumulator + (n > 10 ? 1 : 0),
-  0,
-);
-// console.log("How many numbers are above ten?", aboveTen)
+//2
 
-//TASK 2b
-const highestNum = arr1.reduce((a, b) => Math.max(a, b));
-// console.log("Highest number of the array is: ", highestNum)
-
-//TASK 2c
-const sumOfEven = arr1.reduce((acc, curr) => acc + (curr % 2 === 0 ? curr : 0));
-// console.log("Sum of every even array element: ", sumOfEven)
-
-//TASK 2d
-const arr1minusIndex = arr1.map((curr, index) => curr - index);
-// console.log("Every element from arr1 minus its index (arr[1] - 1)", arr1minusIndex)
-
-//TASK 2e
-const arr1plus10 = [...arr1, ...Array(10)].map((_) =>
-  Math.floor(Math.random() * (25 - 5) + 5),
-);
-// console.log("10 more elements added to array)", arr1plus10)
-
-//TASK 2f
-const arr1divided = () => {
-  arrEven = [];
-  arrOdd = [];
-  arr1.forEach((num, index) =>
-    index % 2 === 0 ? arrEven.push(num) : arrOdd.push(num),
-  );
-  return arrOdd, arrEven;
-};
-// arr1divided()
-// console.log("arr1 split into two, based on its indexes", arrEven, arrOdd)
-
-//TASK 2g
-const arr1equal0 = arr1.map((num, index) =>
-  index % 2 === 0 && num > 15 ? (num = 0) : (num = num),
-);
-// console.log("All numbers that have a prime index and is more than 15)", arr1equal0)
-
-//TASK 2h
-const arr1under10 = arr1.findIndex((num) => num < 10);
-// console.log("Index of first number thats less than 10", arr1under10)
-
-//TASK 3
-const arr200 = [...Array(200)]
-  .map((_) => ['A', 'B', 'C', 'D'][Math.floor(Math.random() * 4)])
-  .reduce((count, item) => ((count[item] = count[item] + 1 || 1), count), {});
-// console.log("We create a new array of 200 elements(randomized A,B,C,D) then count how many of each letter got generated", arr200)
-
-//TASK 4
-const task4 = () => {
-  let repeatingCombination = 0;
-  let uniqueCombination = 0;
-
-  const random200Array = () =>
-    [...Array(200)].map(
-      (_) => ['A', 'B', 'C', 'D'][Math.floor(Math.random() * 4)],
-    );
-  const random3array = [
-    (firstRandom = random200Array()),
-    (secondRandom = random200Array()),
-    (thirdRandom = random200Array()),
-  ];
-  const tripletArr = firstRandom.map((arr, arrIndex) =>
-    [firstRandom[arrIndex], secondRandom[arrIndex], thirdRandom[arrIndex]].join(
-      '',
-    ),
-  );
-  const findDuplicates = tripletArr.filter((el, index) =>
-    tripletArr.indexOf(el) === index
-      ? uniqueCombination++
-      : repeatingCombination++,
-  );
-  console.log(tripletArr);
-  console.log(
-    `There is ${uniqueCombination} unique combinations and ${repeatingCombination} repeating combinations`,
-  );
-  return uniqueCombination, repeatingCombination;
-};
-// task4();
+const arr2 = [...Array(10)].map(_ => parseInt(Math.random() * 10 + 1));
+// console.log(arr2);
 
 
-//TASK 5
-
-const task5 = () => {
-  arr1Random = []
-  arr2Random = []
-  const generateNewNum = () => parseInt(Math.random() * (1000 - 100) + 100)
-  function createNewRandom(arr) {
-    while (arr.length < 100) {
-      const newNum = generateNewNum()
-      if(arr.indexOf(newNum == -1))
-        arr.push(newNum)
-    }
-  }
-  createNewRandom(arr1Random)
-  createNewRandom(arr2Random)
-};
-// Generates 2 arrays of 100 elements from 100 to 999. All elements are unique
-task5()
+// Kodo karų kodas
+const randomArr = (min, max, n = 1) =>  Array.from({ length: n }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+// console.log(randomArr(1, 10, 10)); // cia ne mano jei ka
 
 
-//TASK 6
-const arr6 = arr1Random.filter((el) => !arr2Random.includes(el))
-// console.log("An array of values from arrRandom1 which do not include arr2Random values", arr6)
+let a;
+const genDigit = parseInt(Math.random() * 10 + 1);
 
-//TASK 7
-const arr7 = arr1Random.filter((el) => arr2Random.includes(el))
-// console.log("An array of values from that exist in arrRandom1 and arrRandom2", arr7)
-
-
-//TASK 8
-const task8 = () => {
-  const arr8 = []
-  const indexes = arr1Random.map((el) => el)
-  const values = arr2Random.map((el) => el)
-  for (let i = 0; i < indexes.length; i++) {
-    arr8[indexes[i]] = values[i];
-  }
-  return arr8
+if (genDigit > 5) {
+    a = 'A';
+} else {
+    a = 'B';
 }
-task8()
-// Creates an arr8 array which indexes are the values from arr1Random and values are the values from arr2Random
 
+let b = genDigit > 5 ? 'A' : 'B';
 
-//TASK 9
-const task9 = () => {
-  const arr9 = [];
-  for(let i=0; i< 10; i++) {
-    if(i < 2) {
-      arr9.push(Math.floor(Math.random() * (25 - 5) + 5))
-    } else {
-      arr9[i] = arr9[i-1] + arr9[i-2]
-    }
-  }
-  return arr9
+// console.log(a, b);
+
+let racoons = 'A';
+
+racoons = 5;
+
+// console.log(racoons);
+
+if (++racoons || ++racoons) {
+    console.log('YES');
+} else {
+    console.log('NOP');
 }
-task9()
 
-const arr11 = [...Array(10)].reduce((acc, el, index) => {
-  if (index < 2) {
-    acc.push(Math.floor(Math.random() * (25 - 5) + 5));
-  } else {
-    acc.push(acc[index - 1] + acc[index - 2]);
-  }
-  return acc;
-}, []);
-// console.log(arr11)
-// Works aswell
-
-
-
-// const arr10 = [...Array(10)].map((el, index) => index < 2 ? el = Math.floor(Math.random() * (25 - 5) + 5) : el = arr10[(index - 1)] + arr10[(index-2)])
-//This code is not functional since el = arr10[(index - 1)] + arr10[(index-2)] is not valid
-
-
-
+console.log(racoons);
