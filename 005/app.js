@@ -69,6 +69,7 @@ const pilkis = new Dog('Pilkis');
 
 console.log(murka.whatIsYourVoiceNotStatic());
 console.log(SayName.whatIsYourVoice());
+console.log(Cat.whatIsYourVoice());
 
 
 
