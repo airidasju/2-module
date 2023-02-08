@@ -21,6 +21,7 @@ const cats = [
   },
 ];
 
+
 const compareCats = cats.reduce((acc, curr) =>
   acc.weight == curr.weight
     ? `${cats
@@ -34,5 +35,25 @@ const compareCats = cats.reduce((acc, curr) =>
         curr.name
       } is lighter`,
 );
-console.log(cats);
-console.log(compareCats);
+// console.log(cats);
+// console.log(compareCats);
+
+
+//TASK 3
+const noahBoat = [
+  { 
+    type: 'cat',
+    space: 15
+  },
+  { 
+    type: 'cow',
+    space: 15
+  }
+]
+
+const animalsCame = [...Array(2)].map((el) => el = getRandomNum(31, 0))
+const animalsFit = noahBoat.reduce((acc, curr, index) => curr.space >= animalsCame[index] ? acc : false, true)
+const result = `${animalsCame[0]} cats came\n${animalsCame[1]} cows came\n\n${animalsFit ? "All of the animals fit in the boat" : "Animals do not fit on the boat"}`
+// console.log(result)
+
+//TASK 4
