@@ -62,3 +62,5 @@ const whatToBuy = (diceToBuy == 1 || diceToBuy == 5 ? `Buy a TV` : diceToBuy == 
 // console.log(diceToBuy, whatToBuy)
 
 //TASK 5
+const rand3sorted = [...Array(3)].map((el) => el = getRandomNum(8, 1)).sort((a, b) => a - b).join(" ")
+console.log("3 randomly generated numbers, sorted in ascending order: ",rand3sorted)
