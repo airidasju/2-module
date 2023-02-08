@@ -57,3 +57,8 @@ const result = `${animalsCame[0]} cats came\n${animalsCame[1]} cows came\n\n${an
 // console.log(result)
 
 //TASK 4
+const diceToBuy = getRandomNum(7, 1)
+const whatToBuy = (diceToBuy == 1 || diceToBuy == 5 ? `Buy a TV` : diceToBuy == 3 || diceToBuy == 4 ? `Buy a washing machine` : `Buy a refrigerator`)
+// console.log(diceToBuy, whatToBuy)
+
+//TASK 5
