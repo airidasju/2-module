@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  &.blue {
+    background-color: #61dafb;
+  }
+
+  &.green {
+    background-color: lightgreen;
+  }
+
+  &.yellow {
+    background-color: darkgoldenrod;
+  }
+}
