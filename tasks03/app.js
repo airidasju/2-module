@@ -33,7 +33,7 @@ const fuelCounter = () => {
   for(let i = 1; i <= 10; i ++) {
     const fuelCost = rand(3, 6)
     fuelRemaining = fuelRemaining - fuelCost
-    if(fuelRemaining < 3 && fuelRemaining < 0) {
+    if(fuelRemaining < 0) {
       console.log("Not enough fuel to finish the lap",i,"\nWe currently have",fuelRemaining+fuelCost,"litres", 'and we need', fuelCost, '\n\nWe are short on', Math.abs(fuelRemaining),'liter')
       return fuelRemaining+fuelCost
     }
@@ -69,4 +69,39 @@ const fastestTurn = () => {
 }
 // fastestTurn()
 
+const raceLength = 10;
 
+const wholeRace = () => {
+  let raceFuel = 44;
+  const lapInfo = []
+  for(let i = 0; i < raceLength; i++) {
+      const speedThisLap = rand(120, 220);
+      const fuelNeed = rand(3, 6);
+      raceFuel = raceFuel - fuelNeed;
+    
+  
+    if(raceFuel >= 0) {
+
+      lapInfo.push({
+        lap: i+1,
+        avgSpeed: speedThisLap,
+        fuelRemaining: raceFuel,
+        fuelLost: fuelNeed
+      })
+    } else if(fuelNeed > raceFuel) {
+      console.log({
+        lap: i+1,
+        avgSpeed: speedThisLap,
+        fuelRemaining: 0,
+        fuelLost: raceFuel + fuelNeed,
+        fuelMissing: lapInfo[lapInfo.length - 1].lap == 10 ? raceFuel : fuelNeed + ((raceLength - i - 1)*rand(3, 6))
+      })
+      console.log(lapInfo)
+      return
+    }
+    
+  }
+  console.log(lapInfo)
+}
+
+wholeRace()
