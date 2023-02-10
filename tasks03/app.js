@@ -64,8 +64,6 @@ const wholeRace = () => {
 
 wholeRace();
 
-
-
 //TASK 1
 const raceLaps = 10;
 
