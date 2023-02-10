@@ -4,6 +4,68 @@ function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+//TASK 1 2 3 4 combined
+
+const fuelHandler = (laps) => {
+  let fuelDeficit = 0;
+  for (let i = 1; i < laps; i++) {
+    fuelDeficit += rand(3, 6);
+  }
+  return fuelDeficit;
+};
+
+const raceLength = 10;
+
+const wholeRace = () => {
+  let raceFuel = 44;
+  const lapInfo = [];
+  for (let i = 0; i < raceLength; i++) {
+    const lapCorners = {};
+
+    const speedThisLap = rand(120, 220);
+    const fuelNeed = rand(3, 6);
+    raceFuel = raceFuel - fuelNeed;
+
+    for (let t = 0; t < 5; t++) {
+      const randomTurnSpeed = rand(20, 120);
+      lapCorners[t + 1] = randomTurnSpeed;
+    }
+
+    if (raceFuel >= 0) {
+      lapInfo.push({
+        lap: i + 1,
+        avgSpeed: speedThisLap,
+        fuelRemaining: raceFuel,
+        fuelLost: fuelNeed,
+        corners: lapCorners,
+        fastestCorner: Math.max.apply(null, Object.values(lapCorners)),
+        slowestCorner: Math.min.apply(null, Object.values(lapCorners)),
+      });
+    } else if (fuelNeed > raceFuel) {
+      lapInfo.push({
+        lap: i + 1,
+        avgSpeed: speedThisLap,
+        fuelRemaining: 0,
+        fuelLost: raceFuel + fuelNeed,
+        fuelMissing:
+          i + 1 == 10
+            ? Math.abs(raceFuel)
+            : `Approximately ${
+                fuelHandler(raceLength - i) + Math.abs(raceFuel)
+              } liters`,
+      });
+      console.log(lapInfo);
+      return lapInfo;
+    }
+  }
+  console.log(lapInfo);
+  return lapInfo;
+};
+
+wholeRace();
+
+
+
 //TASK 1
 const raceLaps = 10;
 
@@ -87,52 +149,3 @@ const fastestTurn = () => {
   return turns[turns.length - 1];
 };
 // fastestTurn()
-
-const fuelHandler = (laps) => {
-  let fuelDeficit = 0;
-  for (let i = 1; i < laps; i++) {
-    fuelDeficit += rand(3, 6);
-  }
-  return fuelDeficit;
-};
-
-const raceLength = 10;
-
-const wholeRace = () => {
-  let raceFuel = 44;
-  const lapInfo = [];
-  for (let i = 0; i < raceLength; i++) {
-    const speedThisLap = rand(120, 220);
-    const fuelNeed = rand(3, 6);
-    raceFuel = raceFuel - fuelNeed;
-
-    if (raceFuel >= 0) {
-      lapInfo.push({
-        lap: i + 1,
-        avgSpeed: speedThisLap,
-        fuelRemaining: raceFuel,
-        fuelLost: fuelNeed,
-      });
-    } else if (fuelNeed > raceFuel) {
-      lapInfo.push({
-        lap: i + 1,
-        avgSpeed: speedThisLap,
-        fuelRemaining: 0,
-        fuelLost: raceFuel + fuelNeed,
-        fuelMissing:
-          i + 1 == 10
-            ? Math.abs(raceFuel)
-            : `Approximately ${
-                fuelHandler(raceLength - i) + Math.abs(raceFuel)
-              } liters`,
-      });
-
-      console.log(lapInfo);
-      return lapInfo;
-    }
-  }
-  console.log(lapInfo);
-  return lapInfo;
-};
-
-wholeRace();
