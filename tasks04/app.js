@@ -29,3 +29,8 @@ const catWeight = bitCats.map((cat) => cat[1]).reduce(function (
 },
 {});
 // console.log(catWeight)
+
+//TASK 4
+const sortedCats = bitCats.map((cat) => cat[0]).sort((a, b) => a[1] > b[1] ? 1 : -1)
+// console.log(sortedCats)
+
