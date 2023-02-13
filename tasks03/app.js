@@ -62,7 +62,7 @@ const wholeRace = () => {
   return lapInfo;
 };
 
-wholeRace();
+// wholeRace();
 
 //TASK 1
 const raceLaps = 10;
@@ -147,3 +147,22 @@ const fastestTurn = () => {
   return turns[turns.length - 1];
 };
 // fastestTurn()
+
+//TASK 5
+
+const dangerRace = () => {
+  const events = () => {
+    const kangaroo = rand(0, 1);
+    const missedTurn = rand(0, 1);
+    const missedBrakes = rand(0, 1);
+    return kangaroo && missedTurn && missedBrakes ? true : false;
+  };
+
+  let lapCounter = -1;
+  do {
+    lapCounter++;
+  } while (events());
+  return lapCounter;
+};
+
+dangerRace();
