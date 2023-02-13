@@ -13,27 +13,35 @@ const data = [
 
 function App() {
 
+    // const stateValue = useState('start value')[0];
+    // const functionToChangeState = useState('start value')[1];
+
     const [stateValue, functionToChangeState] = useState('start value');
 
-    functionToChangeState('next value') // => stateValue = 'next value'
+    // stateValue = 'next value';
+    functionToChangeState('next value'); // => stateValue = 'next value'
 
     const arr = ['red', 'blue'];
-    
-    const [red, blue] = arr
-        // const red = arr[0]
-        // const blue = arr[1]
+
+    // const red = arr[0];
+    // const blue = arr[1];
+
+    const [red, blue] = arr;
+
 
     return (
         <div className="App">
             <header className="App-header">
 
-            {/* <Click/> */}
+            <Click/>
 
                 <div className="card">
                     <div className="card-header">
                         <h2>Animals List</h2>
                     </div>
+
                     
+
                     <ul className="list-group list-group-flush">
                         {
                             data.map((a, i) => <AnimalLi key={a.id} animal={a} index={i} />)
