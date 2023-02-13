@@ -34,3 +34,8 @@ const catWeight = bitCats.map((cat) => cat[1]).reduce(function (
 const sortedCats = bitCats.map((cat) => cat[0]).sort((a, b) => a[1] > b[1] ? 1 : -1)
 // console.log(sortedCats)
 
+//TASK 5
+
+const happyCats = [...Array(bitGirls.length)].map((el, index) => index == 0 ? el=[bitGirls[index], "Barsukas"]: el=[bitGirls[index-1], bitCats[index-1][0]])
+console.log(happyCats)
+
