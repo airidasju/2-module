@@ -1,5 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import AnimalLi from './components/008/AnimalLi';
+import Click from './components/008/Click';
 
 
 const data = [
@@ -18,10 +20,14 @@ function App() {
       <header className='App-header'>
             <div className='App'>
 
+                    <Click></Click>
+                    
                 <div className='card'>
                     <div className='card-header'>
                         <h2>Animals List</h2>
                     </div>
+
+
                     <ul className='list-group list-group-flush '>
                         {
 
