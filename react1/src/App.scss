@@ -37,6 +37,10 @@
   }
 }
 
+h2 {
+  color:darkcyan;
+}
+
 h1 {
   &.blue {
     background-color: #61dafb;
@@ -48,5 +52,17 @@ h1 {
 
   &.yellow {
     background-color: darkgoldenrod;
+  }
+}
+
+
+.list-bin {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  i {
+    font-size: 0.6em;
   }
 }

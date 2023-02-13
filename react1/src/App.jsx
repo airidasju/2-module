@@ -1,23 +1,37 @@
 import './App.scss';
-import Animal from './components/jb/Animal';
+import AnimalLi from './components/008/AnimalLi';
 
-const obj = ['racoon', 'fox'];
 
-// obj.add('racoon')
+const data = [
+    {id: 1, animal: "Racoon", color: 'crimson', bold:'true'},
+    {id: 4, animal: "Fox", color: 'brown', bold:'true'},
+    {id: 17, animal: "Beaver", color: 'skyblue', bold: 'false'},
+    {id: 3, animal: "Unicorn", color: 'coral', bold:'true'},
+]
 
-// obj.add('fox')
 
 function App() {
-  //   const fox = <u>FOX number: {rand(100, 199)}</u>;
+
 
   return (
     <div className='App'>
       <header className='App-header'>
-        <h2>{obj}</h2>
+            <div className='App'>
 
-        <Animal animalName='Racoon' color='coral' h1Class='blue'></Animal>
-        <Animal animalName='Fox' color='crimson' h1Class='green'></Animal>
-        <Animal animalName='Rabit' color='black' h1Class='yellow'></Animal>
+                <div className='card'>
+                    <div className='card-header'>
+                        <h2>Animals List</h2>
+                    </div>
+                    <ul className='list-group list-group-flush '>
+                        {
+
+                            data.map((a, i) => a = <AnimalLi key={a.id} animal={a} index={i}></AnimalLi>)
+
+                        }
+                    </ul>
+                </div>
+
+            </div>
       </header>
     </div>
   );
