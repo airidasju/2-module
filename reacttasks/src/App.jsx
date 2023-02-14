@@ -1,7 +1,7 @@
 import './App.scss';
 import Bala from './components/Bala';
 import Tvenkinys from './components/Tvenkinys';
-import Daiktas from './components/Daiktas';
+import Jura from './components/Jura';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -36,6 +36,12 @@ function App() {
                           <h2 style={{color:'black'}}>Tvenkinys</h2>
                       </div>
                         <Tvenkinys sea={seaPlaners}/>
+                    </div>
+                    <div className="card">
+                      <div className="card-header">
+                          <h2 style={{color:'black'}}>Jura</h2>
+                      </div>
+                        <Jura sea={seaPlaners}/>
                     </div>
                   </div>
       </header>
