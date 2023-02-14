@@ -8,8 +8,8 @@ function Tvenkinys({sea}) {
     return (
         <div>
             <ul className='board'>
-                <Daiktas id={odd}></Daiktas>
-                <Daiktas id={even}></Daiktas>
+                <Daiktas id={odd} color={sea.color}></Daiktas>
+                <Daiktas id={even} color={sea.color}></Daiktas>
             </ul>
         </div>
     )
