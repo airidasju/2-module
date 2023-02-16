@@ -10,9 +10,9 @@ function Jura({sea}) {
             <ul className='board'>
                 {
                 sea.map((el) => 
-                el.type==="man" ? <Valtis element={el}></Valtis> 
-                : el.type==="car" ? <Laivas element={el}></Laivas> 
-                : el.type==="fish" ? <Sala element={el}></Sala> 
+                el.type==="man" ? <Valtis element={el} key={uuidv4()}></Valtis> 
+                : el.type==="car" ? <Laivas element={el} key={uuidv4()}></Laivas> 
+                : el.type==="fish" ? <Sala element={el} key={uuidv4()}></Sala> 
                 : <li key={uuidv4()}>{Object.values(el).map((el) => el+" ")}</li>
                 )}
         </ul>
