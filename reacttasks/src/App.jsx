@@ -3,6 +3,7 @@ import Bala from './components/reactlist/Bala';
 import Tvenkinys from './components/reactlist/Tvenkinys';
 import Jura from './components/reactlist/Jura';
 import Vandenynas from './components/reactlist/Vandenynas';
+import Pasaulis from './components/reactlist/Pasaulis';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -49,6 +50,12 @@ function App() {
                           <h2 style={{color:'black'}}>Vandenynas</h2>
                       </div>
                         <Vandenynas sea={seaPlaners}/>
+                    </div>
+                    <div className="card">
+                      <div className="card-header">
+                          <h2 style={{color:'black'}}>Pasaulis</h2>
+                      </div>
+                        <Pasaulis sea={seaPlaners}/>
                     </div>
                   </div>
       </header>
