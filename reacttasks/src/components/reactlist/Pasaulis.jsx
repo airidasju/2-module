@@ -4,28 +4,30 @@ import Narvas from './Narvas';
 import Garazas from './Garazas';
 import Akvariumas from './Akvariumas';
 
-
 function Pasaulis({ sea }) {
-
-
-
   return (
     <div>
       <ul className='board'>
-        {sea.map((el) => el.id % 2 === 0 ? 
-        <>
-        {el.type === "man" ? <Namas element={el}></Namas> : null}
-        {el.type === "animal" ? <Narvas element={el}></Narvas> : null}
-        {el.type === "car" ? <Garazas element={el}></Garazas> : null}
-        {el.type === "fish" ? <Akvariumas element={el}></Akvariumas> : null}
-        </>
-        :
-        <>
-        {el.type === "man" ? <Namas element={el}></Namas> : null}
-        {el.type === "animal" ? <Narvas element={el}></Narvas> : null}
-        {el.type === "car" ? <Garazas element={el}></Garazas> : null}
-        {el.type === "fish" ? <Akvariumas element={el}></Akvariumas> : null}
-        </>
+        {sea.map((el) =>
+          el.id % 2 === 0 ? (
+            <>
+              {el.type === 'man' ? <Namas element={el}></Namas> : null}
+              {el.type === 'animal' ? <Narvas element={el}></Narvas> : null}
+              {el.type === 'car' ? <Garazas element={el}></Garazas> : null}
+              {el.type === 'fish' ? (
+                <Akvariumas element={el}></Akvariumas>
+              ) : null}
+            </>
+          ) : (
+            <>
+              {el.type === 'man' ? <Namas element={el}></Namas> : null}
+              {el.type === 'animal' ? <Narvas element={el}></Narvas> : null}
+              {el.type === 'car' ? <Garazas element={el}></Garazas> : null}
+              {el.type === 'fish' ? (
+                <Akvariumas element={el}></Akvariumas>
+              ) : null}
+            </>
+          ),
         )}
       </ul>
     </div>
