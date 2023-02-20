@@ -2,8 +2,6 @@ import './App.scss';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tree from './components/reactstate/Tree';
-import Berzas from './components/reactstate/berzas';
-import Uosis from './components/reactstate/uosis';
 import { useState } from 'react';
 
 function App() {
