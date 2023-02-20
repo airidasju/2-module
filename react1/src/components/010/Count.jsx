@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import Buttons from './Buttons';
+import Buttons from "./Buttons";
+import Show from "./Show";
 
 function Count() {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(1);
 
     return (
         <>
-        <h1>{count}</h1>
-        <Buttons setCount={setCount}></Buttons>
+            <Show count={count}/>
+            <Buttons setCount={setCount} />
         </>
     )
 }

@@ -1,4 +1,4 @@
-import randColor from '../../../functions/randColor';
+import randColor from '../../../Functions/randColor';
 function ColorButton({classes, setSq}) {
 
     const clickHandler = () => {

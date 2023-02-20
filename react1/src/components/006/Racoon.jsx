@@ -1,13 +1,13 @@
-
-import Cat from './Cat'
+import Cat from './Cat';
 
 function Racoon() {
+
     return (
         <>
-        <h2>Racoon</h2>
-        <Cat></Cat>
+        <h2>RACOON</h2>
+        <Cat/>
         </>
-    )
+    );
 }
 
-export default Racoon 
+export default Racoon;

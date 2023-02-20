@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './App.scss';
-import randColor from './functions/randColor';
+import randColor from './Functions/randColor';
 // import Sq from './Components/009/Sq';
 
 function App() {
