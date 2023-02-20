@@ -1,26 +1,54 @@
 import './App.scss';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Azuolas from './components/reactstate/azuolas';
+import Tree from './components/reactstate/Tree';
 import Berzas from './components/reactstate/berzas';
 import Uosis from './components/reactstate/uosis';
+import { useState } from 'react';
 
 function App() {
+  const [sq, setSq] = useState([]);
 
+  const addBerzas = () => {
+    setSq((t) => [...t, { type: 'Berzas' }]);
+  };
+
+  const addUosis = () => {
+    setSq((t) => [...t, { type: 'Uosis' }]);
+  };
+
+  const addAzuolas = () => {
+    setSq((t) => [...t, { type: 'Azuolas' }]);
+  };
 
   return (
     <div className='App'>
       <header className='App-header'>
         <div className='treeBtn'>
-      <button>Add Berzas</button>
-      <button>Add Uosis</button>
-      <button>Add Azuolas</button>
-      </div>
-            <div className='laukas'>
-                <Azuolas></Azuolas>
-                <Berzas></Berzas>
-                <Uosis></Uosis>
-            </div>
+          <button onClick={() => addBerzas()}>Add Berzas</button>
+          <button onClick={() => addUosis()}>Add Uosis</button>
+          <button onClick={() => addAzuolas()}>Add Azuolas</button>
+        </div>
+        <div className='laukas'>
+          <div className='treeCol'>
+            <span>Azuolas</span>
+            {sq.map((t, i) =>
+              t.type === 'Azuolas' ? <Tree key={i} type={t.type}></Tree> : null,
+            )}
+          </div>
+          <div className='treeCol'>
+            <span>Berzas</span>
+            {sq.map((t, i) =>
+              t.type === 'Berzas' ? <Tree key={i} type={t.type}></Tree> : null,
+            )}
+          </div>
+          <div className='treeCol'>
+            <span>Uosis</span>
+            {sq.map((t, i) =>
+              t.type === 'Uosis' ? <Tree key={i} type={t.type}></Tree> : null,
+            )}
+          </div>
+        </div>
       </header>
     </div>
   );
