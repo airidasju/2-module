@@ -2,7 +2,7 @@ import './App.scss';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import Square from './Square';
+import Square from './components/reactstate/Square';
 
 function App() {
   const [sq, setSq] = useState([]);
