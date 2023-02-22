@@ -109,3 +109,32 @@
   color: #282c34;
   font-size: 40px;
 }
+
+.canvas {
+  width: 800px;
+  height: 800px;
+  background-color: #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #282c34;
+}
+
+.simpleSq {
+  width: 100px;
+  height: 100px;
+  background-color: #282c34;
+  border: #ebebeb 3px solid;
+}
+
+.delButton {
+  background-color: red;
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  &::before {
+    content: 'DEL';
+    font-weight: bold;
+  }
+}
