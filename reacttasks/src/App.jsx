@@ -4,17 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
 function App() {
-  const [form, setChecked] = useState(true);
+  const [form, setChecked] = useState({num: 5, rectangle: false});
 
-  const toggleChecked = () => setChecked((val) => !val);
+  const toggleChecked = () => setChecked((prevState ) => [{num: 5, rectangle: !prevState.rectangle}]);
+
+
 
   return (
     <div className='App'>
       <header className='App-header'>
-        <button onClick={() => toggleChecked()}>Click</button>
+        <button onClick={() => toggleChecked()}>Change form</button>
+        <button >Random num 5-25</button>
         <div
           className={`transformation`}
-          style={{ borderRadius: form ? '50%' : null }}
+          style={{ borderRadius: form.rectangle ? '50%' : null }}
         ></div>
       </header>
     </div>
