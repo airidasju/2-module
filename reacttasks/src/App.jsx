@@ -19,11 +19,16 @@ function App() {
     ]);
   };
 
+  const resetSq = () => {
+    setSq((s) => []);
+  };
+
   return (
     <div className='App'>
       <header className='App-header'>
         <button onClick={() => addSq("crimson")}>Add red</button>
         <button onClick={() => addSq("indigo")}>Add indigo</button>
+        <button style={{backgroundColor: "crimson"}} onClick={()=> resetSq()}>Reset</button>
         <div className={`canvas`}>
           {sq.map((s) => (
             <SimpleSquare key={uuidv4()} sq={s} setSq={setSq} i={s.index} color={s.color}></SimpleSquare>
