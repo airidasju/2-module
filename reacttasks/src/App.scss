@@ -119,6 +119,7 @@
   align-items: center;
   flex-wrap: wrap;
   color: #282c34;
+  margin-top: 10px;
 }
 
 .simpleSq {
@@ -140,9 +141,46 @@
 }
 
 .logic {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   margin-bottom: 5px;
+}
+
+.catBin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.catInput {
+  display: flex;
+  flex-direction: column;
+  &.color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .colorInput {
+      width: 332px;
+      height: 48px;
+    }
+  }
+}
+
+.cats {
+  width: 700px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cat {
+  background-color: #282c34;
+  border: #ebebeb 3px solid;
+  padding: 3px 20px;
+  border-radius: 15px;
 }
