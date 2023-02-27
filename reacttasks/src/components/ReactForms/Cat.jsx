@@ -4,6 +4,7 @@ function Cat({ name, color, weight }) {
       <span style={{ color: 'white' }}>
         {name}: {weight}kg
       </span>
+      <button>Edit</button>
     </div>
   );
 }

@@ -1,12 +1,22 @@
 import './App.scss';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cat from './components/ReactForms/Cat';
 import rand from './functions/rand';
 
 function App() {
-  const [cat, setCat] = useState([]);
+  const [cat, setCat] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem('cats');
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('cats', JSON.stringify(cat));
+  }, [cat]);
+
 
   const [name, setName] = useState('');
   const handleName = (event) => {
