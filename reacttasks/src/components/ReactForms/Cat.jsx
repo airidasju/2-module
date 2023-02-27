@@ -1,10 +1,14 @@
-function Cat({ name, color, weight }) {
+
+function Cat({ name, color, weight, cat, setCat }) {
+
+
+
   return (
     <div className='cat' style={{ backgroundColor: color }}>
       <span style={{ color: 'white' }}>
-        {name}: {weight}kg
+        {cat.name}: {weight}kg
       </span>
-      <button>Edit</button>
+      <button className='edit' >Edit</button>
     </div>
   );
 }
