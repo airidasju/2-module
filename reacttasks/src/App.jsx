@@ -86,6 +86,8 @@ function App() {
                   weight={c.weight}
                   name={c.name}
                   color={c.color}
+                  cat={c}
+                  setCat={setCat}
                 ></Cat>
               </li>
             ))}

@@ -183,8 +183,13 @@
   border: #ebebeb 3px solid;
   padding: 3px 20px;
   border-radius: 15px;
+  display:flex;
+  justify-content: space-between;
+  width: 250px;
 }
 
 .edit {
-  
+  border-radius: 5px;
+  font-size: 10px;
+  margin-left: 10px;
 }
